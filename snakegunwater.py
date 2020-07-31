@@ -4,6 +4,8 @@ import datetime
 def gettime():
 	return datetime.datetime.now()
 
+print("______SNACKE,GUN AND WATER GAME______\n")
+
 chance = 10
 com = 0
 your = 0
@@ -60,15 +62,19 @@ while (chance>1):
 	else:
 		chance = chance+1
 		print("Left",chance, "out of 10\n")
-		print("Invalid Word")
+		print("Invalid Word\n")
 		
 if com>your:
 	print("Your Total Point =", your)
 	print("Computer Total Point =", com)
 	print("Computer Win and You Lose")
-elif com<your:
+elif your>com:
 	print("Your Total Point =", your)
 	print("Computer Total Point =", com)
 	print("Congretulation You Win and Computer Lose")
+else:
+	print("Your Total Point =", your)
+	print("Computer Total Point =", com)
+	print("Congretulation! both are wins!")	
 f = open("sgw.txt", "a")
-f.write(name+"\n"+"Your Total Point ="+str(your)+"\n"+"Computer Total Point ="+str(com))
+f.write(name+"\n"+"Your Total Point ="+str(your)+"\n"+"Computer Total Point ="+str(com)+"\n"+str(gettime())+"\n")
